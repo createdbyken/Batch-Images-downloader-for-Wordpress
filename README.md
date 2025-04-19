@@ -11,6 +11,15 @@ The script will parse the xml file and download all images to a local directory.
 - OpenURI gem
 - FileUtils gem
 
+## Installation
+Make sure to have `ruby 3.0.X` and higher. 
+If you don't have any specific ruby versions, checkout this guide (MACOS): https://formulae.brew.sh/formula/ruby@3.0
+
+All you need to do is run
+```
+bundle install
+```
+
 ## Usage
 
 1. Place the xml file from the Wordpress export in the same directory as this script.
