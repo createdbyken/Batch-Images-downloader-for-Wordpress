@@ -4,14 +4,21 @@ require 'fileutils'
 require 'nokogiri'
 require 'open-uri'
 
-xml_file_path = 'superpackingtkt.WordPress.2025-04-17.xml'
+# search for the XML file in the current directory
+xml_file_path = Dir.glob('*.xml').first
+
+if xml_file_path.nil?
+  puts 'No XML file found in the current directory.'
+  exit
+end
+
+puts "Found XML file: #{xml_file_path}"
 
 output_directory = 'downloaded_images'
 
 FileUtils.mkdir_p(output_directory)
 
 def download_images_from_xml(xml_file, output_dir)
-  # Parse the XML file
   xml_content = File.read(xml_file)
   doc = Nokogiri::XML(xml_content)
 
